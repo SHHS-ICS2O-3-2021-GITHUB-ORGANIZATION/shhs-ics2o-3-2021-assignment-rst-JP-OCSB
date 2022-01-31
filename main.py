@@ -4,8 +4,12 @@
 # PURPOSE OF PROGRAM:  To ask a user a series of triva questions than tell them how they did in comparison to the average user
 
 # VARIABLE DEFINITION
+
 userInput = 0
 finalMark = 0
+userPercentage = 0
+averageScore = 66
+
 # INPUT
 
 #Prompting user to start the game
@@ -24,6 +28,8 @@ elif userInput != "a":
     #If user is incorrect tell them the right answer
   print("\nINCORRECT\nThe correct answer was a")
 
+#Repeat the question structure above for the rest of the questions
+
 userInput = input("\n2. When was the computer first invented?:\na) between 1822 and 1832\nb) between 1902 and 1908\nc) between 1833 and 1871\nd) between 1894 and 1902\nPlease enter either a, b, c or d here: ")
 if userInput == "c":
   print("\nCORRECT")
@@ -31,7 +37,7 @@ if userInput == "c":
 elif userInput != "c":
   print("\nINCORRECT\nThe correct answer was c")
 
-userInput = input("\n3. How many teeth are in the adult mouth?:\na) 25\nb) 22\nc) 43\nd) 32\nPlease enter either a, b, c or d here: ")
+userInput = input("\n3. How many teeth are in the adult mouth including widom teeth?:\na) 25\nb) 22\nc) 43\nd) 32\nPlease enter either a, b, c or d here: ")
 if userInput == "d":
   print("\nCORRECT")
   finalMark = finalMark + 1
@@ -94,7 +100,7 @@ if userInput == "d":
 elif userInput != "d":
   print("\nINCORRECT\nThe correct answer was d")
   
-userInput = input("\n12. Which river flows through London?:\na) The Thames\nb) The Ganges\nc) The Nile\nd) The Danube River\nPlease enter either a, b, c or d here: ")
+userInput = input("\n12. Which river flows through London England?:\na) The Thames\nb) The Ganges\nc) The Nile\nd) The Danube River\nPlease enter either a, b, c or d here: ")
 if userInput == "a":
   print("\nCORRECT")
   finalMark = finalMark + 1
@@ -108,8 +114,46 @@ if userInput == "b":
 elif userInput != "b":
   print("\nINCORRECT\nThe correct answer was b")
 
+userInput = input("\n14. What is the name of the longest river in South America?:\na) The Amazon River\nb) The Nile\nc) The Rhine River\nd) The Volga River\nPlease enter either a, b, c or d here: ")
+if userInput == "a":
+  print("\nCORRECT")
+  finalMark = finalMark + 1
+elif userInput != "a":
+  print("\nINCORRECT\nThe correct answer was a")
+
+userInput = input("\n15. What is the rarest M&M color?:\na) Blue\nb) Red\nc) Brown\nd) Yellow\nPlease enter either a, b, c or d here: ")
+if userInput == "c":
+  print("\nCORRECT")
+  finalMark = finalMark + 1
+elif userInput != "c":
+  print("\nINCORRECT\nThe correct answer was c")
+
+#Printing the amount of questions the user answered correctly
 print("\nYou got\n " + str(finalMark) + " out of 15 right")
 
+#Calculating the user's percentage
 userPercentage = (float(finalMark) / 15)*100
+
+#Getting rid of the decimal on the user's percentage
 userPercentage = int(userPercentage)
+
+#Printing the user's percentage
 print("\nYour percentage is " + str(userPercentage) + "%")
+
+#Converting user's percentage back to an integer for comparisons below
+userPercentage == int(userPercentage)
+
+#Seeing if user's score is equal to the average score
+if userPercentage == averageScore:
+  print("You scored the same as the average user")
+
+#Seeing if user's score is better than the average score
+elif userPercentage > averageScore:
+  print("You scored higer than the average user")
+
+#Seeing if user's score is worse than the average score
+elif userPercentage < averageScore:
+  print("You scored less than the average score")
+
+#Telling the user the average score of other users
+print("The average score is 66% (10 out of 15)")
