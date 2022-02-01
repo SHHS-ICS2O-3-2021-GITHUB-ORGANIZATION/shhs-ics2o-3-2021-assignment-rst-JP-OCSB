@@ -9,11 +9,14 @@ userInput = 0
 finalMark = 0
 userPercentage = 0
 averageScore = 0
+selection = 0
  
 # INPUT
  
-selection = input("Welcome to the trivia game! Please make your genre selection, type math for the math genre or type general for a general genre: ")
+#Asking user to select the genre of trivia they would like to play
+selection = input("Welcome to the trivia game! Please make your genre selection, type math for the math genre, type general for a general genre, or type quit to exit the program: ")
  
+#This is the code for if the user picked general trivia
 while selection == "general":
   averageScore = 66
   selection = 0
@@ -161,17 +164,18 @@ while selection == "general":
     print("You scored less than the average score")
  
   #Telling the user the average score of other users
-  print("The average score is 66% (10 out of 15)")
+  if userPercentage != averageScore:
+    print("The average score is 66% (10 out of 15)")
 
  
+#This is the code for if the user picked the math genre of trivia
 while selection == "math":
  
- averageScore = 75
+ averageScore = 87
  selection = 0
+
  #Prompting user to start the game
  foo = input("Welcome to the math trivia game!\nI will ask you 8 math questions and at the end I will tell you how many you got right and wrong as well as how your score compares to other people.\nPress enter to start the game!")
- 
- # PROCESSING/OUTPUT
  
  #Asking questions
  userInput = int(input("\n1. What is 12 + 72?:\nPlease enter your answer with no spaces just the number here: "))
@@ -263,4 +267,7 @@ while selection == "math":
    print("You scored less than the average score")
  
  #Telling the user the average score of other users
- print("The average score is 75% (6 out of 8)")
+ if userPercentage != averageScore:
+   print("The average score is 87% (7 out of 8)")
+
+print("\nThank you for playing my trivia game!")
